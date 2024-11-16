@@ -1212,7 +1212,7 @@ ${ flowData.code }
 				const isArray = bufferNode.value.array.length !== bufferNode.value.itemSize;
 				const bufferCountSnippet = bufferCount > 0 && uniform.type === 'buffer' ? ', ' + bufferCount : '';
 				const bufferTypeSnippet = bufferNode.isAtomic ? `atomic<${bufferType}>` : `${bufferType}`;
-				const bufferSnippet = bufferNode.bufferStruct ? this.getBufferStructMembers(bufferType) : `\t${ uniform.name } : array< ${ bufferTypeSnippet }${ bufferCountSnippet } >\n`;
+				const bufferSnippet = bufferNode.bufferStruct ? this.getBufferStructMembers( bufferType ) : `\t${ uniform.name } : array< ${ bufferTypeSnippet }${ bufferCountSnippet } >\n`;
 				const bufferAccessMode = bufferNode.isStorageBufferNode ? `storage, ${ this.getStorageAccess( bufferNode ) }` : 'uniform';
 
 				bufferSnippets.push( this._getWGSLStructBinding( bufferNode.bufferStruct, isArray, 'NodeBuffer_' + bufferNode.id, structName, bufferSnippet, bufferAccessMode, uniformIndexes.binding ++, uniformIndexes.group ) );

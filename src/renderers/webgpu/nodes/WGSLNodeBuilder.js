@@ -971,7 +971,7 @@ ${ flowData.code }
 		uniforms.forEach( ( uniform ) => {
 
 			const { name, node } = uniform;
-			const hasBufferStruct = node?.bufferStruct === true;
+			const hasBufferStruct = node.bufferStruct === true;
 			bufferStructMap.set( name, hasBufferStruct );
 
 		} );

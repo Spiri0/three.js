@@ -121,7 +121,7 @@
 					firstInstance: 'uint',
 					offset: 'uint'
 				} );
-  
+
 				const writeDrawBuffer = wgslFn(`
 					fn compute(            
 						index: u32,
@@ -133,9 +133,8 @@
 						var instanceCount = instances * pow( sin( time * 0.25 ), 4.0 );
 
 						atomicStore( &drawBuffer.instanceCount, u32( instanceCount ) );
-
 					}
-  				`); 
+				`); 
 
 				computeDrawBuffer = writeDrawBuffer( {
 					drawBuffer: storageStruct( drawBuffer, drawBufferStruct, drawBuffer.count ),
@@ -156,14 +155,11 @@
 						drawBuffer.firstVertex = 0u;
 						drawBuffer.firstInstance = 0u;
 						drawBuffer.offset = 0u;
-
 					}
 				`);
 
 				computeInitDrawBuffer = initDrawBuffer( {
-
 					drawBuffer: storageStruct( drawBuffer, drawBufferStruct, drawBuffer.count ),
-
   				} ).compute( 1 ); 
 
 
@@ -225,7 +221,7 @@
 
 						return color;
 					}
-				` );
+				`);
 
 				const material = new THREE.MeshBasicNodeMaterial( {
 					side: THREE.DoubleSide,

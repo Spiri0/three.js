@@ -105,6 +105,8 @@ class PMREMGenerator {
 	 * @param {number} sigma
 	 * @param {number} near
 	 * @param {number} far
+  	 * @param {Vector3} position
+	 * @param {number} size
 	 * @return {WebGLRenderTarget}
 	 */
 	fromScene( scene, sigma = 0, near = 0.1, far = 100, position = new Vector3( 0, 0, 0 ), size = 256 ) {
